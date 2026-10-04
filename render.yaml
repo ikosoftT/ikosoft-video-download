@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: ikosoft-video-download-worker
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeployTrigger: off
+    envVars:
+      - key: WORKER_MODE
+        value: "1"
+      - key: DOWNLOAD_DIR
+        value: /app/work/downloads
+      - key: ALLOWED_ORIGINS
+        value: https://vercel-one-omega-81.vercel.app
