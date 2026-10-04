@@ -2,3 +2,11 @@
 __pycache__/
 .pytest_cache/
 work/
+outputs/
+.vercel/
+.env
+.env.*
+.render/
+*.pem
+*.key
+deployment/vercel/public/
